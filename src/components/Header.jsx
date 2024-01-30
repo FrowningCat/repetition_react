@@ -1,9 +1,15 @@
+import logo from '/vite.svg';
+
 export default function Header() {
+    const now = new Date();
+    const name = 'Vite logo';
+
     return (
         <header>
-            <h3>Test vite</h3>
+            <img src={logo} alt={name} />
+            {/* <h3>Test vite</h3> */}
 
-            <span>time</span>
+            <span>Время сейчас: {now.toLocaleTimeString()}</span>
         </header>
     );
 }
