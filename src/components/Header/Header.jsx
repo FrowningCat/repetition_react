@@ -1,5 +1,6 @@
 import logo from '/vite.svg';
 import { useState } from 'react';
+import classes from './Header.module.css';
 
 export default function Header() {
     const [now, setNow] = useState(new Date());
