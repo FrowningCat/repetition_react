@@ -4,6 +4,10 @@ import Button from './components/Button/Button';
 import { ways } from './data';
 
 export default function App() {
+    function handlClick(tupe) {
+        console.log(tupe);
+    }
+
     return (
         <div>
             <Header />
@@ -25,9 +29,13 @@ export default function App() {
                     <h3>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit
                     </h3>
-                    <Button>Подход</Button>
-                    <Button>Доступность</Button>
-                    <Button>Концентрация</Button>
+                    <Button onClick={() => handlClick('way')}>Подход</Button>
+                    <Button onClick={() => handlClick('easy')}>
+                        Доступность
+                    </Button>
+                    <Button onClick={() => handlClick('program')}>
+                        Концентрация
+                    </Button>
                 </section>
             </main>
         </div>
