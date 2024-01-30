@@ -27,24 +27,38 @@ export default function App() {
                     <h3>Lorem, ipsum.</h3>
 
                     <ul>
-                        <WayToTeach
+                        {ways.map((way) => (
+                            <WayToTeach key={way.title} {...way} />
+                        ))}
+                        {/* <WayToTeach
                             title={ways[0].title}
                             description={ways[0].description}
                         />
                         <WayToTeach {...ways[1]} />
                         <WayToTeach {...ways[2]} />
-                        <WayToTeach {...ways[3]} />
+                        <WayToTeach {...ways[3]} /> */}
                     </ul>
                 </section>
                 <section>
                     <h3>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit
                     </h3>
-                    <Button onClick={() => handlClick('way')}>Подход</Button>
-                    <Button onClick={() => handlClick('easy')}>
+                    <Button
+                        isActive={contentType == 'way'}
+                        onClick={() => handlClick('way')}
+                    >
+                        Подход
+                    </Button>
+                    <Button
+                        isActive={contentType == 'easy'}
+                        onClick={() => handlClick('easy')}
+                    >
                         Доступность
                     </Button>
-                    <Button onClick={() => handlClick('program')}>
+                    <Button
+                        isActive={contentType == 'program'}
+                        onClick={() => handlClick('program')}
+                    >
                         Концентрация
                     </Button>
 
