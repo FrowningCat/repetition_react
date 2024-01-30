@@ -1,11 +1,14 @@
 import Header from './components/Header';
 import { WayToTeach } from './components/WayToTeach';
 import Button from './components/Button/Button';
-import { ways } from './data';
+import { useState } from 'react';
+import { ways, differences } from './data';
 
 export default function App() {
-    function handlClick(tupe) {
-        console.log(tupe);
+    const [content, setContent] = useState('Нажми на кнопку');
+
+    function handlClick(type) {
+        setContent(type);
     }
 
     return (
@@ -36,6 +39,7 @@ export default function App() {
                     <Button onClick={() => handlClick('program')}>
                         Концентрация
                     </Button>
+                    <p>{differences[content]}</p>
                 </section>
             </main>
         </div>
