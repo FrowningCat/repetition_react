@@ -1,5 +1,6 @@
 import Header from './components/Header';
-import WayToTeach from './components/WayToTeach';
+import { WayToTeach } from './components/WayToTeach';
+import Button from './components/Button/Button';
 import { ways } from './data';
 
 export default function App() {
@@ -19,6 +20,14 @@ export default function App() {
                         <WayToTeach {...ways[2]} />
                         <WayToTeach {...ways[3]} />
                     </ul>
+                </section>
+                <section>
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit
+                    </h3>
+                    <Button>Подход</Button>
+                    <Button>Доступность</Button>
+                    <Button>Концентрация</Button>
                 </section>
             </main>
         </div>
