@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 
@@ -7,7 +7,7 @@ export default function EffectSection() {
     const [loading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
 
-    async function fetchUsers() {
+    const fetchUsers = useCallback(async () => {
         setLoading(true);
         const respose = await fetch(
             'https://jsonplaceholder.typicode.com/users'
@@ -15,11 +15,11 @@ export default function EffectSection() {
         const users = await respose.json();
         setUsers(users);
         setLoading(false);
-    }
+    }, []);
 
     useEffect(() => {
         fetchUsers();
-    }, []);
+    }, [fetchUsers]);
 
     return (
         <section>
