@@ -22,6 +22,7 @@ export default function EffectSection() {
                     Inventore omnis, non doloremque beatae nesciunt sed quia ab
                     rem facilis sunt!
                 </p>
+                <Button onClick={() => setModal(false)}>Close modal</Button>
             </Modal>
         </section>
     );
